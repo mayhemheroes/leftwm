@@ -12,6 +12,7 @@ ADD . /leftwm
 WORKDIR /leftwm
 
 RUN cd ./leftwm/src && sed -i 's/^mod config;$/pub mod config;/' lib.rs
+RUN sed -i 's/^fn absolute_path;$/pub fn absolute_path;/' config.rs
 RUN cd ../../
 RUN cd ./leftwm/fuzz && cargo +nightly hfuzz build
 
@@ -19,3 +20,4 @@ RUN cd ./leftwm/fuzz && cargo +nightly hfuzz build
 FROM ubuntu:20.04
 
 COPY --from=builder leftwm/leftwm/fuzz/hfuzz_target/x86_64-unknown-linux-gnu/release/is_program_in_path /
+COPY --from=builder leftwm/leftwm/fuzz/hfuzz_target/x86_64-unknown-linux-gnu/release/absolute_path /

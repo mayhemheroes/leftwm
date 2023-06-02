@@ -18,3 +18,7 @@ members = ["."]
 [[bin]]
 name = "is_program_in_path"
 path = "fuzz_targets/is_program_in_path.rs"
+
+[[bin]]
+name = "absolute_path"
+path = "fuzz_targets/absolute_path.rs"

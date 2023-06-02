@@ -60,6 +60,7 @@ jobs:
       matrix:
         mayhemfile:
           - mayhem/is_program_in_path.Mayhemfile
+          - mayhem/absolute_path.Mayhemfile
 
     steps:
       - uses: actions/checkout@v3

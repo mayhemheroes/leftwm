@@ -1,4 +1,4 @@
-project: ante
+project: leftwm
 target: is_program_in_path
 
 cmds:
