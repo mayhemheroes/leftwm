@@ -1,0 +1,20 @@
+[package]
+name = "leftwm-fuzz"
+version = "0.0.0"
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+
+[dependencies]
+leftwm = { path = ".." }
+honggfuzz = "0.5.55"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "is_program_in_path"
+path = "fuzz_targets/is_program_in_path.rs"

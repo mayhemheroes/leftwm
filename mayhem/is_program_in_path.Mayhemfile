@@ -1,0 +1,5 @@
+project: ante
+target: is_program_in_path
+
+cmds:
+  - cmd: /is_program_in_path
