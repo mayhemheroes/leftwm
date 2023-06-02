@@ -12,7 +12,7 @@ ADD . /leftwm
 WORKDIR /leftwm
 
 RUN cd ./leftwm/src && sed -i 's/^mod config;$/pub mod config;/' lib.rs
-RUN sed -i 's/^fn absolute_path;$/pub fn absolute_path;/' config.rs
+RUN sed -i 's/fn absolute_path/pub fn absolute_path/g' config.rs
 RUN cd ../../
 RUN cd ./leftwm/fuzz && cargo +nightly hfuzz build
 
