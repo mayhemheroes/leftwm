@@ -1,0 +1,5 @@
+project: leftwm
+target: absolute_path
+
+cmds:
+  - cmd: /absolute_path
